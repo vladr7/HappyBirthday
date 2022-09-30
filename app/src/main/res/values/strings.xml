@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">HappyBirthday</string>
+    <string name="text_composable">    Text composable
+</string>
+    <string name="display_text_and_follows">    Displays text and follows Material Design guidelines.
+</string>
+    <string name="image_composable">    Image composable
+</string>
+    <string name="create_a_composable_painter">    Creates a composable that lays out and draws a given Painter class object.
+</string>
+    <string name="row_composable">    Row composable
+</string>
+    <string name="a_layout_comp">    A layout composable that places its children in a horizontal sequence.
+</string>
+    <string name="column_comp">    Column composable
+</string>
+    <string name="a_layout_comp_children">    A layout composable that places its children in a vertical sequence.
+</string>
 </resources>

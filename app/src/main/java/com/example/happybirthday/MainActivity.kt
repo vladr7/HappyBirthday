@@ -40,94 +40,61 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column() {
-        Row() {
-            Column(
-                Modifier
-                    .background(color = Color.Green)
-                    .fillMaxHeight(fraction = 0.5f)
-                    .fillMaxWidth(fraction = 0.5f)
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = stringResource(id = R.string.text_composable),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                )
-                Text(
-                    text = stringResource(id = R.string.display_text_and_follows),
-                    textAlign = TextAlign.Justify
-                )
-            }
-            Column(
-                Modifier
-                    .background(color = Color.Yellow)
-                    .fillMaxHeight(0.5f)
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = stringResource(id = R.string.text_composable),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                )
-                Text(
-                    text = stringResource(id = R.string.display_text_and_follows),
-                    textAlign = TextAlign.Justify
-                )
-            }
+        Row(Modifier.weight(1f)) {
+            ComposableInfoCard(
+                title = stringResource(R.string.first_title),
+                description = stringResource(R.string.first_description),
+                backgroundColor = Color.Green,
+                modifier = Modifier.weight(1f)
+            )
+            ComposableInfoCard(
+                title = stringResource(R.string.second_title),
+                description = stringResource(R.string.second_description),
+                backgroundColor = Color.Yellow,
+                modifier = Modifier.weight(1f)
+            )
         }
-        Row() {
-            Column(
-                Modifier
-                    .background(color = Color.Cyan)
-                    .fillMaxHeight()
-                    .fillMaxWidth(fraction = 0.5f)
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = stringResource(id = R.string.text_composable),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                )
-                Text(
-                    text = stringResource(id = R.string.display_text_and_follows),
-                    textAlign = TextAlign.Justify
-                )
-            }
-            Column(
-                Modifier
-                    .background(color = Color.LightGray)
-                    .fillMaxHeight()
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = stringResource(id = R.string.text_composable),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                )
-                Text(
-                    text = stringResource(id = R.string.display_text_and_follows),
-                    textAlign = TextAlign.Justify
-                )
-            }
+        Row(Modifier.weight(1f)) {
+            ComposableInfoCard(
+                title = stringResource(R.string.third_title),
+                description = stringResource(R.string.third_description),
+                backgroundColor = Color.Cyan,
+                modifier = Modifier.weight(1f)
+            )
+            ComposableInfoCard(
+                title = stringResource(R.string.fourth_title),
+                description = stringResource(R.string.fourth_description),
+                backgroundColor = Color.LightGray,
+                modifier = Modifier.weight(1f)
+            )
         }
+    }
+}
+
+@Composable
+private fun ComposableInfoCard(
+    title: String,
+    description: String,
+    backgroundColor: Color,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+        Text(
+            text = description,
+            textAlign = TextAlign.Justify
+        )
     }
 }
 
